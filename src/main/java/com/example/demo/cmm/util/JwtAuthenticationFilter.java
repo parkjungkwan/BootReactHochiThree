@@ -9,7 +9,16 @@ import javax.servlet.ServletResponse;
 
 import org.springframework.web.filter.GenericFilterBean;
 
+import com.example.demo.sec.domain.JwtTokenProvider;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+@AllArgsConstructor @Getter @Setter
 public class JwtAuthenticationFilter extends GenericFilterBean{
+	
+	private JwtTokenProvider JwtTokenProvider;
+	
 
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
