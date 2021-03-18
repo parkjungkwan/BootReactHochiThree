@@ -6,12 +6,11 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Data
+
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
+
 @Table(name="users")
-public class User {
+public class User{
 
 	@Id
 	@Column(name = "user_no")
@@ -23,9 +22,9 @@ public class User {
 
 	@Column(name = "password")
 	private String password;
-
-	@Column(name = "enabled")
-	private boolean enabled;
+	
+	@Column(name = "authority")
+	private String authority;
 	
 	@Column(name = "name")
 	private String name;
@@ -38,5 +37,7 @@ public class User {
 	
 	@Column(name = "gender")
 	private String gender;
+	
+	
 	
 }

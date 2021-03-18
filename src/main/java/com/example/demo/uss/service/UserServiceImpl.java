@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.cmm.service.AbstractService;
 import com.example.demo.uss.domain.User;
+import com.example.demo.uss.domain.UserDto;
 import com.example.demo.uss.repository.UserRepository;
 import com.example.demo.uss.repository.UserRepositoryImpl;
 
@@ -54,7 +55,7 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
 	// UserDetailsService 의 메소드
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		User user = repo.findByUsername(username);
+		UserDto user = repo.findByUsername(username);
 		if (user == null) {
             throw new UsernameNotFoundException(String.format("No user found with username '%s'.", username));
         } else {

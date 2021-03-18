@@ -6,9 +6,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.uss.domain.User;
+import com.example.demo.uss.domain.UserDto;
 
 interface UserCustomRepository{
-	public Optional<User> findByUsername(String username);
+	public UserDto findByUsername(String username);
 }
 public interface UserRepository extends JpaRepository<User, Long>,
 										UserCustomRepository{
