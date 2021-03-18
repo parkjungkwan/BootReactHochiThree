@@ -7,9 +7,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.example.demo.cmm.util.CustomAuthenticationEntryPoint;
-import com.example.demo.cmm.util.JwtAuthenticationFilter;
 import com.example.demo.sec.domain.JwtTokenProvider;
+import com.example.demo.sec.filter.CustomAuthenticationEntryPoint;
+import com.example.demo.sec.filter.JwtAuthenticationFilter;
 @Configuration
 public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter{
 	@Autowired JwtTokenProvider jwtTokenProvider;
