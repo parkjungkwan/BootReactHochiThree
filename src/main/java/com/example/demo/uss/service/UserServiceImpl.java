@@ -62,6 +62,10 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
             return user;
         }
 	}
+	@Override
+	public UserDto login(String username, String password) {
+		return repo.login(username, password);
+	}
 	
 	
 }
