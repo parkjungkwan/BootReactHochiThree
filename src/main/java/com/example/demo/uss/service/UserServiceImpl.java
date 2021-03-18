@@ -54,8 +54,12 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
 	// UserDetailsService 의 메소드
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		
-		return null;
+		User user = repo.findByUsername(username);
+		if (user == null) {
+            throw new UsernameNotFoundException(String.format("No user found with username '%s'.", username));
+        } else {
+            return user;
+        }
 	}
 	
 	
