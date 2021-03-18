@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 
@@ -13,11 +15,9 @@ import com.example.demo.uss.repository.UserRepository;
 import com.example.demo.uss.repository.UserRepositoryImpl;
 
 @Service 
-public class UserServiceImpl extends AbstractService<User> {
+public class UserServiceImpl extends AbstractService<User> implements UserService {
 	@Autowired UserRepository repo;
-	void test() {
-		
-	}
+	
 	@Override
 	public long count() {
 		return repo.count();
@@ -49,6 +49,12 @@ public class UserServiceImpl extends AbstractService<User> {
 	@Override
 	public User save(User entity) {
 		// TODO Auto-generated method stub
+		return null;
+	}
+	// UserDetailsService 의 메소드
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		
 		return null;
 	}
 	
